@@ -2,6 +2,12 @@ server:
   port: 8001
 
 spring:
+  application:
+    name: zgl-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.137.1:8848
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     password: zh15107551311
