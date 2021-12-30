@@ -1,7 +1,7 @@
-package com.zgl.controller;
+package com.zgl.modules.user.controller;
 
-import com.zgl.entity.User;
-import com.zgl.service.UserService;
+import com.zgl.modules.user.entity.User;
+import com.zgl.modules.user.service.UserService;
 import com.zgl.utils.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-@Api(tags = "用户登陆")
+@Api(tags = "用户操作")
 @RequestMapping("/user")
 public class UserController {
     @Resource
@@ -30,6 +30,5 @@ public class UserController {
     @PostMapping("/getOne")
     @ApiOperation(value = "查找用户")
     public R getOne(Integer id){return userService.getOne(id);}
-
 
 }

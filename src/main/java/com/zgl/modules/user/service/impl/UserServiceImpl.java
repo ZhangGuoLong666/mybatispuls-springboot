@@ -1,9 +1,10 @@
-package com.zgl.service.impl;
+package com.zgl.modules.user.service.impl;
 
 
-import com.zgl.entity.User;
-import com.zgl.mapper.UserMapper;
-import com.zgl.service.UserService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.zgl.modules.user.entity.User;
+import com.zgl.modules.user.mapper.UserMapper;
+import com.zgl.modules.user.service.UserService;
 import com.zgl.utils.R;
 import org.springframework.stereotype.Service;
 
@@ -45,5 +46,12 @@ public class UserServiceImpl  implements UserService {
     public R getOne(Integer id) {
        User user=userMapper.selectById(id);
        return R.success(user);
+    }
+    @Override
+    public R getOneByName(String name) {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>() ;
+        queryWrapper.eq("username",name);
+        User user=userMapper.selectOne(queryWrapper);
+        return R.success(user);
     }
 }
