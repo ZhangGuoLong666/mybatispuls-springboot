@@ -32,5 +32,6 @@ public class R {
     public static R error(int errorcode){return new R(errorcode,"失败，服务未知异常",null); }
     public static R error(int errorcode,String msg){return new R(errorcode,msg,null); }
     public static R error(int errorcode,String msg,Object data){return new R(errorcode,msg,data); }
+    public static R error(String msg){return new R(1005,msg,null); }
 
 }
